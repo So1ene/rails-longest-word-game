@@ -4,7 +4,7 @@
 <% end %>
 </ul>
 
-<h1>Score:</h1>
+<h1><%= @score %></h1>
 <ul>
   <% if @english.start_with?('✅')
       english_class = 'green'
@@ -19,4 +19,4 @@
   <li class="<%= english_class %>"><%= @english %></li>
   <li class="<%= included_class %>"><%= @included %></li>
 </ul>
-  <h2><%= @score %></h2>
+<%= link_to "Play again", new_path, :class => "btn" %>

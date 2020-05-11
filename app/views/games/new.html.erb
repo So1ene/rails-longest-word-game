@@ -5,7 +5,7 @@
 </ul>
 
 <form action="/score" method="post" class="form">
-  <input type="text" name="attempt">
+  <input type="text" name="attempt" placeholder="Find a word...">
   <input type="submit" value="Play">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>

@@ -20,9 +20,9 @@ class GamesController < ApplicationController
       @included = '❌ Does not include correct letters'
     end
     if @english.start_with?("✅") && @included.start_with?("✅")
-      @score = "You win!"
+      @score = "🎉 Congratulations, you win!"
     else
-      @score = "You lose!"
+      @score = "You lose..."
     end
   end
 
@@ -44,6 +44,6 @@ class GamesController < ApplicationController
   end
 
   def included?(attempt, letters)
-    attempt.upcase.chars.all? { |letter| letters.count(letter) >= attempt.count(letter) }
+    attempt.upcase.chars.all? { |letter| letters.count(letter) >= attempt.upcase.count(letter) }
   end
 end
