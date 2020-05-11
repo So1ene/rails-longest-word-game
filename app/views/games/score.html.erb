@@ -1,0 +1,22 @@
+<ul class="grid">
+<% @letters.each do |letter| %>
+<li><%= letter %></li>
+<% end %>
+</ul>
+
+<h1>Score:</h1>
+<ul>
+  <% if @english.start_with?('✅')
+      english_class = 'green'
+     else
+      english_class = 'red'
+    end
+    if @included.start_with?('✅')
+      included_class = 'green'
+     else
+      included_class = 'red'
+    end %>
+  <li class="<%= english_class %>"><%= @english %></li>
+  <li class="<%= included_class %>"><%= @included %></li>
+</ul>
+  <h2><%= @score %></h2>
